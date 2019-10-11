@@ -1,22 +1,48 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
-import {reset} from 'redux-form';
+// import { actions } from "react-redux-form";
+import styled from "styled-components";
 
-export function Form({ formValues, changeInput, createSmurf, dispatch }) {
+const StyledForm = styled.form`
+  border: black 1px solid;
+  border-radius: 10px;
+  width: 200px;
+  margin: 60px auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  
+`;
+
+const StyledInput = styled.input`
+width: 100px;
+font-size: 20px;
+background-color: blue;
+color: white;
+border-radius: 5px;
+`;
+
+export function Form({ formValues, changeInput, createSmurf }) {
   const onValueChange = event => {
     changeInput(event.target);
   };
 
- 
+  //   const initialFormState = {
+  //     name: "",
+  //     age: "",
+  //     height: ""
+  //   };
+
   const onFormSubmit = event => {
     event.preventDefault();
     createSmurf(formValues);
-    // dispatch(reset(Form));
+    // actions.reset(initialFormState);
   };
 
   return (
-    <form className="component" onSubmit={onFormSubmit} dispatch={dispatch}>
+    <StyledForm className="component" onSubmit={onFormSubmit}>
       <h3>Add a Smurf!</h3>
       <label>
         Name:
@@ -40,8 +66,8 @@ export function Form({ formValues, changeInput, createSmurf, dispatch }) {
       </label>
       <br />
 
-      <input type="submit" />
-    </form>
+      <StyledInput type="submit" />
+    </StyledForm>
   );
 }
 
