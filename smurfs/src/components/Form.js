@@ -40,6 +40,7 @@ export function Form({ formValues, changeInput, createSmurf }) {
     createSmurf(formValues);
     // actions.reset(initialFormState);
   };
+  //I spent a huge amount of time trying to get the form to clear after submit but never managed to get it to work. There seem to be several ways to do it and I wasn't doing any of them right...
 
   return (
     <StyledForm className="component" onSubmit={onFormSubmit}>

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { combineReducers, createStore, applyMiddleware, compose } from "redux";
