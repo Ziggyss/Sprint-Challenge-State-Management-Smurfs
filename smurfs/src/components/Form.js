@@ -53,7 +53,7 @@ export function Form({ formValues, changeInput }) {
 
       <label>
         Age:
-        <input value={formValues.age} onChange={onValueChange} age="age" />
+        <input value={formValues.age} onChange={onValueChange} name="age" />
       </label>
       <br />
 
@@ -62,7 +62,7 @@ export function Form({ formValues, changeInput }) {
         <input
           value={formValues.height}
           onChange={onValueChange}
-          height="height"
+          name="height"
         />
       </label>
       <br />

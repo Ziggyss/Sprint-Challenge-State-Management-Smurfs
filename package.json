@@ -20,7 +20,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
