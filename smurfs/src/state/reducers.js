@@ -14,7 +14,7 @@ export function smurfsReducer(state = initialSmurfs, action) {
     case types.SET_SMURFS:
       return action.payload;
     case types.ADD_SMURF:
-      return [...state, action.payload];
+      return action.payload;
     default:
       return state;
   }

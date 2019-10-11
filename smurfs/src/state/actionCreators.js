@@ -30,3 +30,16 @@ export function changeInput(target) {
     }
   };
 }
+
+export const createSmurf = newSmurf => dispatch => {
+  Axios.post(smurfsApi, newSmurf)
+    .then(response => {
+      dispatch({
+        type: types.ADD_SMURF,
+        payload: response.data
+      });
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+};

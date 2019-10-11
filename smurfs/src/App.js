@@ -6,6 +6,7 @@ import * as reducers from "./state/reducers";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import SmurfList from './components/SmurfList';
+import Form from './components/Form';
 
 const monsterReducer = combineReducers({
   smurfs: reducers.smurfsReducer,
@@ -27,6 +28,7 @@ function App() {
       <div className="App">
         <Navbar />
         <SmurfList />
+        <Form />
       </div>
     </Provider>
   );
