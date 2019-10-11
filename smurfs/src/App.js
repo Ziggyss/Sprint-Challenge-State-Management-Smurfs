@@ -5,6 +5,7 @@ import { combineReducers, createStore, applyMiddleware, compose } from "redux";
 import * as reducers from "./state/reducers";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
+import SmurfList from './components/SmurfList';
 
 const monsterReducer = combineReducers({
   smurfs: reducers.smurfsReducer,
@@ -25,7 +26,7 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <Navbar />
-        Smurfs will render here
+        <SmurfList />
       </div>
     </Provider>
   );
