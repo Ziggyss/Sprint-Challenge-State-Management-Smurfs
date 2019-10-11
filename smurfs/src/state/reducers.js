@@ -28,6 +28,11 @@ const initialFormState = {
 
 export function formReducer(state = initialFormState, action) {
   switch (action.type) {
+    case types.ON_INPUT_CHANGE:
+      return {
+        ...state,
+        [action.payload.name]: action.payload.value
+      };
     default:
       return state;
   }
