@@ -20,6 +20,23 @@ export function smurfsReducer(state = initialSmurfs, action) {
   }
 }
 
+const initialFormState = {
+  name: '',
+  age: '',
+  height: '',
+};
+export function formReducer(state = initialFormState, action) {
+  switch (action.type) {
+    case types.ON_INPUT_CHANGE:
+      return {
+        ...state,
+        [action.payload.name]: action.payload.value,
+      };
+    default:
+      return state;
+  }
+}
+
 const initialValueCount = 0;
 export function countReducer(count = initialValueCount, action) {
   switch (action.type) {

@@ -22,6 +22,18 @@ export const getSmurfs = () => dispatch => {
     })
 };
 
+export function changeInput(target) {
+    return {
+      type: types.ON_INPUT_CHANGE,
+      payload: {
+        name: target.name,
+        value: target.value,
+      },
+    };
+  }
+
+
+
 
 export function increment() {
     return { type: types.INCREMENT };

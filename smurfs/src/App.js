@@ -5,11 +5,13 @@ import { combineReducers, createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import * as reducers from "./state/reducers";
 import SmurfList from './components/SmurfList';
+import Form from './components/Form';
 
 import Counter from "../src/components/counter";
 
 const monsterReducer = combineReducers({
   smurfs: reducers.smurfsReducer,
+  formValues: reducers.formReducer,
   count: reducers.countReducer
 });
 
@@ -28,6 +30,7 @@ function App() {
       <div className="App">
         <Counter />
         <SmurfList />
+        <Form />
       </div>
     </Provider>
   );
