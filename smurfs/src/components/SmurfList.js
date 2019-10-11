@@ -5,7 +5,7 @@ import * as actionCreators from "../state/actionCreators";
 
 const smurfsApi = "http://localhost:3333/smurfs";
 
-export function SmurfList({ smurfs, getSmurfs, deleteSmurf }) {
+export function SmurfList({ smurfs, getSmurfs }) {
   useEffect(() => {
     getSmurfs(smurfsApi);
   }, []);

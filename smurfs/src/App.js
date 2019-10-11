@@ -7,13 +7,13 @@ import * as reducers from "./state/reducers";
 import SmurfList from './components/SmurfList';
 import Form from './components/Form';
 
-import Counter from "../src/components/counter";
+// import Counter from "../src/components/counter";
 
 const monsterReducer = combineReducers({
   smurfs: reducers.smurfsReducer,
   formValues: reducers.formReducer,
-  count: reducers.countReducer
-});
+//   count: reducers.countReducer
+ });
 
 const store = createStore(
   monsterReducer,
@@ -28,7 +28,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Counter />
+        {/* <Counter /> */}
         <SmurfList />
         <Form />
       </div>

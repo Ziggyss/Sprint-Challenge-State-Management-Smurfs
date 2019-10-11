@@ -1,6 +1,33 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
+import Axios from "axios";
+import { ADD_SMURF } from "../state/actionTypes";
+
+const smurfsApi = "http://localhost:3333/smurfs";
+
+export const createSmurf = ({ name, age, height }) => {
+  return dispatch => {
+    return Axios.post(smurfsApi, { name, age, height })
+      .then(response => {
+        dispatch(createSmurfSuccess(response.data));
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  };
+};
+
+export const createSmurfSuccess = data => {
+  return {
+    type: ADD_SMURF,
+    payload: {
+      name: data.name,
+      age: data.age,
+      height: data.height
+    }
+  };
+};
 
 export function Form({ formValues, changeInput }) {
   const onValueChange = event => {
@@ -12,6 +39,7 @@ export function Form({ formValues, changeInput }) {
     alert(
       `submitting ${formValues.name}, ${formValues.age}, ${formValues.height}`
     );
+    createSmurf(formValues);
   };
 
   return (
