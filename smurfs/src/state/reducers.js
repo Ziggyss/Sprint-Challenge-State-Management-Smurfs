@@ -11,6 +11,10 @@ const initialSmurfs = [
 
 export function smurfsReducer(state = initialSmurfs, action) {
   switch (action.type) {
+    case types.SET_SMURFS:
+      return action.payload;
+    case types.ADD_SMURF:
+      return [...state, action.payload];
     default:
       return state;
   }
