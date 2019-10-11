@@ -13,3 +13,16 @@ export function smurfsReducer(state = initialSmurfs, action) {
       return state;
   }
 }
+
+const initialFormState = {
+  name: "",
+  age: "",
+  height: ""
+};
+
+export function formReducer(state = initialFormState, action) {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
