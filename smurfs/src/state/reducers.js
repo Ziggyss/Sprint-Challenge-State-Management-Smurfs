@@ -15,6 +15,8 @@ export function smurfsReducer(state = initialSmurfs, action) {
       return action.payload;
     case types.ADD_SMURF:
       return action.payload;
+    case types.DELETE_SMURF:
+      return action.payload;
     default:
       return state;
   }
@@ -33,6 +35,13 @@ export function formReducer(state = initialFormState, action) {
         ...state,
         [action.payload.name]: action.payload.value
       };
+    case types.ADD_SMURF_SUCCESS:
+      return {
+        name: "",
+        age: "",
+        height: ""
+      };
+
     default:
       return state;
   }

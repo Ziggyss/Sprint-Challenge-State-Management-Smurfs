@@ -38,8 +38,25 @@ export const createSmurf = newSmurf => dispatch => {
         type: types.ADD_SMURF,
         payload: response.data
       });
+      dispatch({
+          type: types.ADD_SMURF_SUCCESS
+      })
     })
+
     .catch(error => {
       console.log(error.message);
     });
 };
+
+export const deleteSmurf = id => dispatch => {
+    Axios.delete(`smurfsApi/${id}`)
+    .then(response => {
+        dispatch({
+            types: types.DELETE_SMURF,
+            payload: response.data
+        })
+    })
+    .catch(error => {
+        console.log(error.message);
+      });
+}
