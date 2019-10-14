@@ -23,10 +23,28 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+Context API helps solve the problem of having to pass down state from parent to nested child to nested child in an app. The state can be given to another component without the chain of passing down.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions send data from your application to the store.
+
+Reducers change the state of the application.
+
+The store holds the state of the application.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is global whereas component state is local. We would use application state when the state needs to be accessed by many components whereas component state should be used only when the component is like a self-contained “black box” and the state is only ever going to be relevant to that one component.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux-thunk is middleware that intercepts certain action creators (ones that return a function instead of an object) after being fired. It then allows the application to dispatch synchronous actions inside the body of the function once the asyncrhonous ones have fired. 
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I like redux better than the other state management systems we've learned this week because it's scalable and it seems easier to use.
 
 ## Project Set Up
 
